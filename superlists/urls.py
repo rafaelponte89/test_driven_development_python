@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
+# mapeamento da view home_page, expressão regular funciona como url raiz
 urlpatterns = [
     re_path(r'^$', views.home_page, name='home'),
         ]

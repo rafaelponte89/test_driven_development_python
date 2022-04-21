@@ -15,11 +15,11 @@ class NewVisitorTest(unittest.TestCase):
     # método de teste
     def test_start_a_list_and_retrieve_it_later(self):
         # Edith tem ouvido sobre um app de tarefas online legal. Ela vai conferir sua página inicial
-        self.browser.get('http://localhost:8001')
+        self.browser.get('http://localhost:8000')
 
         # Ela observa que o título da página e o cabeçalho mencionam listas de tarefas
         self.assertIn('To-Do', self.browser.title) # compara se 'To-Do' encontra-se no título da janela
-        self.fail('Finish the test!') # quando o teste passa exibe mensagem
+        self.fail('Finish the test!') # quando o teste termina
 
         # Ela é convidada a inserir uma tarefa imediatamente
 
