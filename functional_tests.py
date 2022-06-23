@@ -41,10 +41,14 @@ class NewVisitorTest(unittest.TestCase):
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        self.assertTrue(
-            any(row.text == '1: Buy peacock feathers' for row in rows),
-            'New to-do item not appear in table'
-        )
+       
+        # self.assertTrue(
+        #     any(row.text == '1: Buy peacock feathers' for row in rows),
+        #     f"New to-do item did not appear in table. Contents were:\n{table.text}"
+        # )
+        # ^ Change to
+        self.assertIn('1: Buy peacock feathers',[row.text for row in rows])
+        self.assertIn('2: Buy peacock feathers to make a fly',[row.text for row in rows])
 
         # Ainda há uma caixa de texto convidando-a a adicionar outro item.
         # Ela digita "Use penas de pavão para fazer uma mosca" (Edith é muito metódica)
